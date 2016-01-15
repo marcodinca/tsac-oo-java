@@ -15,8 +15,10 @@ public class Window {
 		
 		//
 		User user2 = new User();
-		user1.setName("A");
-		user1.setSurname("B");
+		user2.setName("A");
+		user2.setSurname("B");
+		
+		System.out.println(user1.getSurname());
 	}
 	
 }

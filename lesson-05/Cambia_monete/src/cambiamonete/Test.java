@@ -1,58 +1,22 @@
 package cambiamonete;
 
-/*import java.io.InputStreamReader;
-import java.io.BufferedReader ;
-import java.io.IOException;*/
+
 
 public class Test {
 
 	public static void main(String[] args) {
-		int[] money = MoneyChangeAlgorithm.money;
+		int value = 1252;
 		
-		int val = 750;
-		
-		System.out.println("Per cambiare " + val + "€ ti servono: ");
-		
-		int[] retArr = MoneyChangeAlgorithm.change(val);		
-		
-		for (int i = 0; i < retArr.length; i++){
-			String valueType = "";
+		MoneyChange[] moneyChanges = MoneyChangeAlgorithm.change(value);
+		for(MoneyChange mc: moneyChanges) {
 			
-	    	if (retArr[i] > 0){
-	    		if(money[i] >= 5){
-	    			if (retArr[i] > 1)
-	    				valueType = " banconote";
-	    			else
-	    				valueType = " banconota";
-	    		}
-	    		else{
-	    			if (retArr[i] > 1)
-	    				valueType = " monete";
-	    			else
-	    				valueType = " moneta";
-	    		}
-		    	System.out.println(retArr[i] + valueType + " da " + money[i] + "€");
-	    	}
-	    	
-	    } 
-	    //---------------------------------------------------------------
+			System.out.println(mc.getItems() 
+								+ " " + mc.getMoneyType() 
+								+ " da " +
+								mc.getMoneyValue() + " euro");
+			
+		}
 		
-		/*
-		 * da aggiungere => inserimento da utente della valuta da cambiare
-		 * InputStreamReader reader = new InputStreamReader(System.in);
-			BufferedReader inputVal = new BufferedReader(reader);
-			String inputString = new String();
-		
-	    	try {
-				inputString = inputVal.readLine();
-	    	}
-	    	catch (IOException e) {
-				e.printStackTrace();
-			}
-		
-	    	int val = Integer.parseInt(inputString);
-		 * 
-		 */
 	}
 
 }
