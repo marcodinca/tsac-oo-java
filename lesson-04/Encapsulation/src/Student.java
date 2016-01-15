@@ -1,17 +1,18 @@
 
 public class Student {
 
-	String name;
-	String surname;
+	public String name; // package
+	public String surname;  // package
 	
 	/// get/set
-	private int age;
+	private int age; // private
 	
 	// NOTE: tutti gli attributi/fields della classe DEVONO
 	// essere dichiarati private
 	
 	// per impostare un valore usare:
 	void setAge(int age) {
+		
 		if (age <= 120)
 			this.age = age;
 	}
@@ -23,7 +24,7 @@ public class Student {
 	
 	//////////
 	
-	String bigliettoVisita() {
+	public String bigliettoVisita() {
 		StringBuffer sb = new StringBuffer();
 		sb.append(name + " ");
 		sb.append(surname);
