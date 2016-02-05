@@ -1,16 +1,14 @@
 package interfaces;
 
-import java.io.InputStream;
-
 import ui.Button;
 import ui.ButtonCommunicationInterface;
 
-public class MyUIAnonymous {
+public class MyUILambda {
 	
 	private String message;
 	
-	public MyUIAnonymous() {
-		message = "MyUIInner.";	
+	public MyUILambda() {
+		message = "MyUILambda.";	
 	}
 	
 	void run() {
@@ -18,13 +16,8 @@ public class MyUIAnonymous {
 		Button b1 = new Button();
 		b1.setName("Click me!");		
 		b1.show();
-		b1.setButtoncommunication(new ButtonCommunicationInterface(){ // body della classe anonima
-			@Override
-			public void onButtonPressed() {
-				System.out.println("Grazie per avermi (s)premuto ;) da parte di:" 
-									+ message);
-			}
-		});
+		b1.setButtoncommunication(
+				() -> System.out.println("Grazie per avermi (s)premuto ;) da parte di: " + message)); 
 		
 		Button b2 = new Button();
 		b2.setName("Non premermi!");		
@@ -41,5 +34,4 @@ public class MyUIAnonymous {
 		b2.pressed();		
 		//b1.pressed();		
 	}
-
 }
