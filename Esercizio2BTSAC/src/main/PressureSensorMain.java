@@ -1,7 +1,5 @@
 package main;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
 
 public class PressureSensorMain {
 	public static void main(String args[]) {
