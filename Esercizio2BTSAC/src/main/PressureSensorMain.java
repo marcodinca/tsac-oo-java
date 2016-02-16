@@ -43,7 +43,7 @@ public class PressureSensorMain {
 		for(int i=0; i<exceptions.size(); i++) {
 			exceptionList[Math.abs(exceptions.get(i).intValue())]++;
 		}
-		for(int i=0; i<exceptionList.length; i++) {
+		for(int i=0; i < exceptionList.length; i++) {
 			System.out.println(">Error code -"+i);
 			System.out.println(exceptionList[i]);
 		}
